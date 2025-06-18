@@ -1,2 +1,2 @@
 #!/bin/bash
-declare -p | grep -v '^declare -x'; declare -x; declare -F
+{ declare -p | grep -v '^declare -x' declare -x declare -F}
