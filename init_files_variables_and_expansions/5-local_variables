@@ -1,0 +1,2 @@
+#!/bin/bash
+declare | grep -v '^declare -x' && echo; declare -x && echo; declare -f
