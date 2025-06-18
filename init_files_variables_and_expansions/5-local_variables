@@ -1,5 +1,5 @@
 #!/bin/bash
-{ declare -p | grep -v '^declare -x'
+( declare -p | grep -v '^declare -x'
 declare -x
 declare -F
-}
+)
