@@ -1,0 +1,6 @@
+#!/bin/bash
+# Display all processes for all users including those without TTY,
+# in a user-oriented format, showing process hierarchy.
+
+ps axjf
+
