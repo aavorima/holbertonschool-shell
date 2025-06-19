@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
-# Stop the 4-to_infinity_and_beyond process without using external kill or killall
+# This script prints "To infinity and beyond" every 2 seconds indefinitely
 
-for pid in $(pgrep -f 4-to_infinity_and_beyond); do
-    kill "$pid"
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+
+  # If stop file exists, exit
+  if [ -e /tmp/stop_infinity ]; then
+    rm -f /tmp/stop_infinity
+    break
+  fi
 done
