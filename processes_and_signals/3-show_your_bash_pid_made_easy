@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Display PID and process name of all processes containing 'bash' without using ps
 for pid in /proc/[0-9]*; do
     pid_num=$(basename "$pid")
     if [ -r "$pid/cmdline" ]; then
