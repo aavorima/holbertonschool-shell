@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+for pid in /proc/[0-9]*; do
+    pid_num=$(basename "$pid")
+    if [ -r "$pid/cmdline" ]; then
+        # Read the command line with null separators replaced by spaces
+        cmd=$(tr '\0' ' ' < "$pid/cmdline")
+        # Extract the process name from the command line (first word)
+        pname=$(basename "$(echo "$cmd" | awk '{print $1}')")
+        if [[ $pname == *bash* ]]; then
+            echo "$pid_num $pname"
+        fi
+    fi
+done
