@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Show all processes with user info and hierarchy
-ps axjf
+ps auxf
